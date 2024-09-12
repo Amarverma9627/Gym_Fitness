@@ -386,7 +386,7 @@ span {
 .review-box img {
     width: 15rem;
     height: 15rem;
-    border-radius: 10%;
+    border-radius: 50%;
     border: 0.2rem solid var(--main-color);
 }
 
