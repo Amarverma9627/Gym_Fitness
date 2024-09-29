@@ -310,6 +310,7 @@
 
     .home-img img {
         width: 110vw;
+        height:45rem;
         margin-left: 6rem;
     }
 
@@ -317,10 +318,13 @@
         font-size: 2.5rem;
         margin-top: 1.5rem;
     }
+    .home-content h1{
+       width: 45rem;
+    }
 
     .home-content p {
         font-size: 2rem;
-        max-width: 60vw;
+        max-width: 100vw;
     }
 
     .home-content {
