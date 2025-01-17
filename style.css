@@ -31,6 +31,7 @@ body {
 section {
     min-height: 100vh;
     padding: 10rem 8% 2rem;
+    overflow: hidden;
 }
 
 /* header section code */
@@ -47,7 +48,7 @@ header {
     background: rgb(0, 0, 0, 0.5);
     backdrop-filter: blur(10px);
     transition: all 0.5s ease;
-    z-index: 1;
+    z-index: 100;
 }
 
 .logo {
@@ -55,7 +56,6 @@ header {
     color: var(--text-color);
     font-weight: 800;
     cursor: pointer;
-
     transition: 0.3s ease-in-out;
 }
 
