@@ -101,25 +101,65 @@
         padding: 7rem;
     }
 
+    /* ...about section */
+    .about-main-container {
+        display: flex;
+        flex-direction: column;
+    }
+
     .about-content {
         margin-top: 2rem;
         text-align: center;
         font-size: 5rem;
     }
-    .about{
+
+    .about {
         display: block;
     }
-    .about-img img{
+
+    .about-img img {
         height: auto;
         width: 76vw;
         margin-left: 10rem;
-       
+
     }
 
     .review .wrapper {
         grid-template-columns: repeat(1, 1fr);
     }
 
+    /* ..contact section code */
+    .image-contact {
+        width: 100%;
+    }
+
+    .image-contact .para-info-main {
+        font-size: 2.5rem;
+    }
+
+    .contact-leftRight-Container .contact-left {}
+
+    .contact-right {
+        width: 40%;
+    }
+
+    .contact-left .left-item .item-name {
+        width: 100%;
+    }
+
+    .contact-left .left-item {
+
+        width: 100%;
+    }
+
+    .contact-left .left-item .left-icon {
+        height: 8rem;
+        width: 8rem;
+    }
+
+
+
+    /* footer code */
     .footer {
         padding: 4rem 0;
     }
@@ -138,9 +178,94 @@
         z-index: -1;
 
     }
+
+    /* ...Join-form-code */
+    .registration-form-wrapper .form-right .reg {
+        font-size: 3rem;
+    }
+
+    .registration-form-wrapper .form-left {
+        height: 70vh;
+        width: 50%;
+
+    }
+
+    .registration-form-wrapper .form-right {
+        border: 1px solid white;
+        height: 70vh;
+        width: 50%;
+    }
+
+    .registration-form-wrapper .input-box {
+
+        row-gap: 4.5rem;
+    }
+
+
+    .registration-form-wrapper .input-box textarea {
+        font-size: 3rem;
+        height: 10rem;
+    }
+
+    .registration-form-wrapper .input-box input {
+        font-size: 3rem;
+        height: 5rem;
+    }
+
+    .registration-form-wrapper .input-box button {
+        font-size: 2.5rem;
+        height: 5rem;
+        min-width: 40%;
+    }
 }
 
 @media(max-width:786px) {
+
+    /* ..form-code */
+
+    .registration-form-wrapper {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        min-width: 100%;
+        justify-content: center;
+        align-items: center;
+        margin-top: 2rem;
+    }
+
+    .registration-form-wrapper .input-box {
+        row-gap: 3rem;
+    }
+
+    .registration-form-wrapper .form-left {
+        height: 85vh;
+        min-width: 90%;
+    }
+
+    .registration-form-wrapper .form-right {
+        height: 78vh;
+        min-width: 90%;
+    }
+
+    .registration-form-wrapper .input-box input {
+        font-size: 2.5rem;
+        height: 6rem;
+
+    }
+
+    .registration-form-wrapper .input-box {
+        row-gap: 4.5rem;
+    }
+
+    .registration-form-wrapper .input-box button {
+        font-size: 3rem;
+        height: 7rem;
+        min-width: 40%;
+    }
+
+
+
+
     .home {
         flex-direction: column;
     }
@@ -203,9 +328,76 @@
         text-align: center;
     }
 
+    /* -----contact-code */
+    .contact-left {
+        align-items: start;
+        min-width: 100vw;
+        padding-inline-start: 10rem;
+    }
+
+    .contact-leftRight-Container {
+        display: flex;
+        flex-direction: column;
+        gap: 10rem;
+    }
+
+    .image-contact .para-info-main {
+        font-size: 3rem;
+        min-width: 100vw;
+    }
+
+    .contact-left .left-item .left-icon {
+        height: 10rem;
+        width: 12rem;
+    }
+
+    .contact-left .left-item .left-icon i {
+        font-size: 5rem;
+    }
+
+    .contact-left .left-item .item-name .logo-name {
+        font-size: 3rem;
+    }
+
+    .contact-left .left-item .item-name p {
+        font-size: 3rem;
+    }
+
     .services h2 {
         margin-bottom: 3rem;
     }
+
+    .contact-right {
+        width: 80vw;
+        max-height: 80vh;
+    }
+
+    .contact-right .right-msg h1 {
+        font-size: 3.5rem;
+    }
+
+    .contact-right .right-item .input input {
+        min-width: 90%;
+        min-height: 5rem;
+        font-size: 3.5rem;
+    }
+
+    .contact-right .right-item {
+        gap: 8rem;
+    }
+
+    .contact-right .right-item .input textarea {
+        min-width: 90%;
+        min-height: 8rem;
+        font-size: 3.5rem;
+    }
+
+    .contact-right .right-item .button2 button {
+        height: 7rem;
+        width: 12.5rem;
+        font-size: 4rem;
+    }
+
 
     .home-img:before {
         content: 'FITNESS';
@@ -221,8 +413,8 @@
         z-index: -1;
 
     }
-    .grid-plan
-    {
+
+    .grid-plan {
         text-align: center;
     }
 }
@@ -277,9 +469,28 @@
         z-index: -1;
 
     }
-    .grid-plan
-    {
+
+    .grid-plan {
         text-align: center;
+    }
+
+    /* --contact-code */
+    .image-contact .para-info-main {
+        min-width: 100%;
+        padding-inline: 0rem;
+        padding-top: 0px;
+    }
+
+    .contact-left {
+        align-items: start;
+        min-width: 100%;
+        padding-inline-start: 1rem;
+    }
+
+    /* .review  */
+    .review-item p {
+        font-size: 2.5rem;
+        line-height: 3rem;
     }
 }
 
@@ -310,7 +521,7 @@
 
     .home-img img {
         width: 110vw;
-        height:45rem;
+        height: 45rem;
         margin-left: 6rem;
     }
 
@@ -318,8 +529,9 @@
         font-size: 2.5rem;
         margin-top: 1.5rem;
     }
-    .home-content h1{
-       width: 45rem;
+
+    .home-content h1 {
+        width: 45rem;
     }
 
     .home-content p {
@@ -345,5 +557,17 @@
         z-index: -1;
 
     }
+
+    .contact-left {
+        align-items: start;
+        min-width: 90%;
+        padding-inline-start: 3rem;
+    }
+
+    .contact-left .left-item .item-name .email-add {
+        max-width: 10vw;
+        
+   }
+
 
 }

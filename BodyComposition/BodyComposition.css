@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    border: none;
+    scroll-behavior: smooth;
+    outline: none;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+:root {
+    --bg-color: #000;
+    --snd-bg-color: #111;
+    --text-color: #fff;
+    --main-color: #45ffca;
+    --rd-color: rgb(255, 0, 0);
+    --fade-color: rgba(95, 93, 93, 0.479);
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background: rgb(0, 0, 0);
+    color: var(--text-color);
+}
+
+section {
+    min-height: 100vh;
+    padding: 6rem 5% 2rem;
+    overflow: hidden;
+}
+
+/* ...body composition code */
+.BodyComposition-wrapper {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(35rem, auto));
+    gap: 6rem;
+    margin-block-start: 1rem;
+}
+
+.BodyComposition-wrapper .BodyComposition-item img {
+    height:25rem;
+    width: 100%;
+    background-size: auto;
+    left: 0;
+}
+
+.BodyComposition-wrapper .BodyComposition-item {
+    background-color: #222121e7;
+    height:100% ;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease-in-out;
+}
+.BodyComposition-wrapper .BodyComposition-item:hover{
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 0 5px white;
+    border-radius: 5px;
+}
+.BodyComposition-wrapper .BodyComposition-item .item-item h1{
+    text-align: center;
+    font-size: 2rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgb(60, 231, 243);
+    padding:1rem;
+}
+.BodyComposition-wrapper .BodyComposition-item .item-item li{
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}

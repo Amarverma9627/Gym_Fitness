@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join page</title>
+    <link rel="stylesheet" href="join.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="/responsive.css">
+</head>
+
+<body>
+    <!-- header-code -->
+    <header>
+         <a href="#home" class="logo">Lodha<span> Fitness</span></a>
+        <div class="show" id="menu">
+            <div class="fa fa-bars" aria-hidden="true" id="menu-icon" onclick="show()"></div>
+        </div>
+        <div class="hide" id="cancel">
+            <i class="fa fa-times " aria-hidden="true" onclick="hide() " id="cross"></i>
+        </div>
+        <div class="hide" id="opt">
+            <ul class="navbar" id="toggle">
+                <li><a href="/index.html#home ">Home</a></li>
+                <li><a href="/index.html#services">Services</a></li>
+                <li><a href="/index.html#about">About</a></li>
+                <li><a href="/index.html#review">Review</a></li>
+                <li><a href="/index.html#img-contact">Contact</a></li>
+
+            </ul>
+        </div>
+        <div class="top-btn">
+            <a href="Join.html" class="nav-btn">Join Us</a>
+        </div>
+    </header>
+    <!-- ++++++++++++++++++++++Join us Page+++++++++++++++++ -->
+
+    <section id="form">
+
+        <div class="registration-form-wrapper">
+            <div class="form-left">
+                <h1 class="head">Let’s Build Something Together</h1><br/>
+                  <p>Fill out the form and we’ll get back to you as soon as possible.</p>
+            </div>
+            <div class="form-right">
+                <h1 class="reg">Registration Form</h1>
+                <div class="input-box">
+                    <input type="text" placeholder="First-Name" required>
+                    <input type="text" placeholder="Last-Name" required>
+                    <input type="email" placeholder="Email" required>
+                    <div class="input-zipPhn">
+                        <input type="number" placeholder="Phone" required/>
+                        <input type="text" placeholder="District" />
+                    </div>
+                    <div class="input-FeesCountry">
+                        <input type="text" placeholder="State " />
+                        <input type="number" readonly placeholder="Fees charge(1200)">
+                    </div>
+                    <textarea placeholder="Type your Message"></textarea>
+                    <button>Register now</button>
+                </div>
+            </div>
+        </div>
+
+       
+        <script src="script.js"></script>
+
+</body>
+
+</html>

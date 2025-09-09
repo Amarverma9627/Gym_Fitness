@@ -1,0 +1,174 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    border: none;
+    scroll-behavior: smooth;
+    outline: none;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+:root {
+    --bg-color: #000;
+    --snd-bg-color: #111;
+    --text-color: #fff;
+    --main-color: #45ffca;
+    --rd-color: rgb(255, 0, 0);
+    --fade-color: rgba(95, 93, 93, 0.479);
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background: rgb(0, 0, 0);
+    color: var(--text-color);
+}
+
+section {
+    min-height: 100vh;
+    padding: 6rem 5% 2rem;
+    overflow: hidden;
+}
+
+/* header-code */
+
+
+
+/* registration-form */
+#form {
+    background-image: url('Registration-pic/bg-pic2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.registration-form-wrapper {
+    display: flex;
+    height: 100%;
+    min-width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.registration-form-wrapper .form-left {
+    height: 82vh;
+    width: 35%;
+      border-radius: 5px 0 0px 5px;
+}
+
+.registration-form-wrapper .form-left {
+    background-image: url('Registration-pic/pic4.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.registration-form-wrapper .form-left .head {
+    height: 3rem;
+    width: 100%;
+    color: #000;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-top: 26.5rem;
+    background-color: #fff;
+
+}
+
+.registration-form-wrapper .form-left p {
+    width: 100%;
+    color: #000;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 1.3rem;
+}
+
+.registration-form-wrapper .form-right {
+    border: 1px solid white;
+    height: 82vh;
+    width: 35%;
+    /* background-color: transparent; */
+    background-color: rgb(64, 64, 68);
+    backdrop-filter: blur(40px);
+    border-radius: 0 5px 5px 0;
+
+}
+
+/* ++++++++++++++++Join us page++++++++++ */
+
+.registration-form-wrapper .form-right .reg {
+    font-size: 2rem;
+    text-align: center;
+    margin-block-start: 1.2rem;
+    font-family: 'Times New Roman', Times, serif;
+    color: rgba(255, 255, 255, 0.863);
+}
+
+.registration-form-wrapper .input-box {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    row-gap: 2.5rem;
+    align-items: center;
+}
+
+.registration-form-wrapper .input-box input {
+    height: 4rem;
+    width: 90%;
+    background: transparent;
+    font-size: 1.6rem;
+    padding-inline: 0.5rem;
+    background-color: white;
+}
+
+.registration-form-wrapper .input-box input::placeholder {
+    color: black;
+    opacity: 0.4;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.registration-form-wrapper .input-box .input-zipPhn {
+    display: flex;
+    width: 90%;
+    gap: 2rem;
+}
+
+.registration-form-wrapper .input-box .input-FeesCountry {
+    display: flex;
+    width: 90%;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.registration-form-wrapper .input-box textarea {
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    height: 7rem;
+    width: 90%;
+    font-size: 1.6rem;
+    padding-inline: 0.5rem;
+    background-color: white;
+}
+
+.registration-form-wrapper .input-box textarea::placeholder {
+
+    opacity: 0.6;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
+}
+
+.registration-form-wrapper .input-box button {
+    height: 3.5rem;
+    width: 30%;
+    font-size: 1.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+    background-color: rgb(235, 200, 46);
+}

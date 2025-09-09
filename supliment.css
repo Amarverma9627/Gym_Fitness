@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    border: none;
+    scroll-behavior: smooth;
+    outline: none;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+:root {
+    --bg-color: #000;
+    --snd-bg-color: #111;
+    --text-color: #fff;
+    --main-color: #45ffca;
+    --rd-color: rgb(255, 0, 0);
+    --fade-color: rgba(95, 93, 93, 0.479);
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background: rgb(0, 0, 0);
+    color: var(--text-color);
+}
+.home2{
+    margin-top: calc(100vh - 51%);
+}
+section {
+    min-height: 100vh;
+    padding: 6rem 5% 2rem;
+    overflow: hidden;
+}
+.Product{
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, auto));
+    gap: 6rem;
+}
+.Product .img-supli1{
+    background-color: #222121e7;
+    height: 37rem;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  transition: all 0.3s ease-in-out;
+  /* padding: 3rem; */
+}
+.Product .img-supli1 img{
+    height: 75%;
+    width: 100%;
+}
+.Product .img-supli1:hover{
+    transform: scale(1.02) translateY(-5px);
+    border:  1px solid rosybrown;
+}
+.Product .img-supli1 .btn-container{
+    display: flex;
+    gap: 2rem;
+}
+.Product .img-supli1 label{
+    font-size: 2rem;
+    margin-block: 1rem;
+}
+.Product .img-supli1 .btn  button{
+    border-radius: 1px;
+    height: 4rem;
+    width: 15rem;
+    cursor: pointer;
+    font-size: 1.7rem;
+    color: white;
+}
+.Product .img-supli1 .btn:nth-child(1) button{
+    background-color: rgb(75, 75, 250);  
+}
+.Product .img-supli1 .btn:nth-child(2) button{
+    background-color: rgb(235, 200, 46);
+}

@@ -181,23 +181,18 @@ header,
     width: 50rem;
 }
 
-.btn {
+#home .home-content .btn {
     display: inline-block;
-    padding: 1rem 2.8rem;
+    padding: 1rem 2.5rem;
     background: var(--main-color);
-    border-radius: 1rem;
     box-shadow: none;
-    font-size: 2rem;
+    font-size: 1.9rem;
     color: var(--bg-color);
-    letter-spacing: 0.3rem;
-    font-weight: bold;
+    letter-spacing: 0.1rem;
     transition: 0.5s ease;
-    height: 4.5rem;
-    width: 15rem;
-
 }
 
-.btn:hover {
+#home .home-content .btn:hover {
     color: var(--text-color);
     text-shadow: 0 0 1.6rem var(--main-color);
     box-shadow: 0 0 1rem var(--main-color), 0 0 1rem var(--main-color);
@@ -247,6 +242,17 @@ header,
     border: 1px solid var(--main-color);
     transform: translateY(-0.5rem) scale(1.04);
     cursor: pointer;
+}
+
+/* supliment-code */
+.supliment {
+    font-size: large;
+    border: 1px solid white;
+    border-top: white;
+    border-left: none;
+    border-right: none;
+    padding-block-end: 1rem;
+    margin-top: 3rem;
 }
 
 /* about.section code */
@@ -394,7 +400,7 @@ header,
 
 .plan {
     /* background: var(--bg-color); */
-    background-image: linear-gradient(to right,rgba(56, 56, 236, 0.767) ,transparent);
+    background-image: linear-gradient(to right, rgba(56, 56, 236, 0.767), transparent);
 }
 
 .grid-plan {
@@ -522,65 +528,6 @@ header,
     font-size: 2rem;
 }
 
-/* ++++++++++++++++Join us page++++++++++ */
-
-.head {
-    font-size: 2rem;
-}
-
-.input-box {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(35rem, auto));
-    gap: 20rem;
-    margin-top: 5rem;
-    row-gap: 5rem;
-}
-
-.input-box input {
-    height: 5rem;
-    width: auto;
-    color: white;
-    background: var(--fade-color);
-    font-size: 2rem;
-    padding-left: 1rem;
-    border-radius: 1rem;
-}
-
-.Address-box textarea {
-    height: 10rem;
-    width: 100%;
-    background: var(--fade-color);
-    font-size: 2rem;
-    padding-left: 1rem;
-    padding-top: 2rem;
-    border-radius: 1rem;
-    margin-top: 5rem;
-    color: white;
-}
-
-.button-box {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 1rem;
-}
-
-.button-box button {
-    height: 3.5rem;
-    width: 10rem;
-    background: rgba(255, 255, 255, 0.425);
-    color: white;
-    border-radius: 0.5rem;
-    font-size: 2rem;
-}
-
-.button-box button:active {
-    background: var(--snd-bg-color);
-}
-
-.button-box button a {
-    color: white;
-}
-
 /* Contact-Section-code */
 .image-contact {
     position: relative;
@@ -601,10 +548,12 @@ header,
     opacity: 0.7;
     z-index: 1;
 }
-.image-contact .img-h{
-  position: relative;
-     z-index: 2;
+
+.image-contact .img-h {
+    position: relative;
+    z-index: 2;
 }
+
 .image-contact .para-info-main {
     text-align: center;
     font-size: 2rem;
@@ -612,7 +561,7 @@ header,
     padding-inline: 10rem;
     padding-top: 10px;
     position: relative;
-     z-index: 2;
+    z-index: 2;
 }
 
 .contact-leftRight-Container {
@@ -622,8 +571,8 @@ header,
     /* background-color: red; */
     justify-content: center;
     align-items: center;
-   position: relative;
-     z-index: 10;
+    position: relative;
+    z-index: 10;
 }
 
 /* left-side    */
@@ -634,14 +583,14 @@ header,
     display: flex;
     flex-direction: column;
     gap: 7rem;
-    padding-inline: 15rem;
-    padding-block: 5rem;
+    
 }
 
 .contact-left .left-item {
     display: flex;
     gap: 2rem;
     align-items: center;
+    width: 100%;
 }
 
 .contact-left .left-item .left-icon {
@@ -668,10 +617,16 @@ header,
 .contact-left .left-item .item-name .logo-name {
     font-size: 2rem;
     color: rgb(134, 152, 212);
+    min-width: 90%;
 }
 
 .contact-left .left-item .item-name p {
     font-size: 2rem;
+   
+}
+.contact-left .left-item .item-name .email-add{
+    
+    min-width: 90%;
 }
 
 /* right-side */
@@ -679,8 +634,8 @@ header,
     height: 100%;
     width: 30%;
     background-color: white;
-    padding-inline-start: 3rem;   
-    padding-block: 3rem; 
+    padding-inline-start: 3rem;
+    padding-block: 3rem;
 }
 
 .contact-right .right-msg h1 {
@@ -688,18 +643,18 @@ header,
     font-family: Arial, Helvetica, sans-serif;
     padding-bottom: 3rem;
     color: rgb(81, 115, 228);
-   
+
 }
 
 .contact-right .right-item {
     display: flex;
     flex-direction: column;
     gap: 3rem;
-    
-   }
+
+}
 
 .contact-right .right-item .input input {
-    
+
     height: 3rem;
     width: 30rem;
     font-size: 1.8rem;
@@ -709,8 +664,8 @@ header,
     border-top: none;
     padding-inline: 0.5rem;
     background-color: transparent;
-   z-index: 3;
-   color:#000;
+    z-index: 3;
+    color: #000;
 }
 
 .contact-right .right-item .input textarea {
@@ -723,7 +678,7 @@ header,
     border-left: none;
     border-right: none;
     border-top: none;
-     color:#000;
+    color: #000;
 }
 
 .contact-right .right-item .button2 button {
@@ -731,7 +686,7 @@ header,
     width: 8rem;
     border-radius: 3px;
     font-size: 2.2rem;
-    background-color:rgb(81, 115, 228);
+    background-color: rgb(81, 115, 228);
     color: white;
 }
 
@@ -747,7 +702,7 @@ header,
     background-repeat: no-repeat;
     /* background: #1c1d1c; */
     background-image: url('assets/dark.jpg');
-   
+
 }
 
 .footer .social {
