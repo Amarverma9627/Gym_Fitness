@@ -557,7 +557,11 @@
         z-index: -1;
 
     }
-
+        /* ..contact-code- */
+    .image-contact .para-info-main{
+        text-align: justify;
+        padding: 2rem;
+    }
     .contact-left {
         align-items: start;
         min-width: 90%;
@@ -577,7 +581,13 @@
    }
    .contact-left .left-item .item-name p {
     font-size: 2.4rem;
-   
+}
+.contact-right .right-item .input input {
+    font-size: 2.4rem;
+}
+.contact-right .right-item .input textarea {
+    font-size: 2.4rem;
+    min-height:5rem;
 }
 
 }
