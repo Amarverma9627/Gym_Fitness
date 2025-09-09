@@ -213,6 +213,8 @@ header,
     grid-template-columns: repeat(auto-fit, minmax(35rem, auto));
     gap: 2.3rem;
     margin-top: 4.1rem;
+    justify-content: center;
+    align-items: center;
 }
 
 .row {
