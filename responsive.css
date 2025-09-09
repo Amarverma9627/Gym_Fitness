@@ -333,7 +333,7 @@
         text-align: center;
     }
     .icons-option .icon11 span h1 {
-    font-size: 3rem;
+    font-size: 2rem;
     
 }
     .icons-option .icon11 h3{
@@ -418,7 +418,9 @@
         width: 12.5rem;
         font-size: 4rem;
     }
-
+.contact-right .right-msg h1 {
+        font-size: 3rem;
+    }
 
     .home-img:before {
         content: 'FITNESS';
@@ -507,6 +509,7 @@
         min-width: 100%;
         padding-inline-start: 1rem;
     }
+    
 
     /* .review  */
     .review-item p {
