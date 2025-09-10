@@ -100,12 +100,14 @@
     .services {
         padding: 7rem;
     }
+
     /* review */
-    
-.review-item p {
+
+    .review-item p {
         font-size: 3.2rem;
         line-height: 4rem;
     }
+
     /* ...about section */
     .about-main-container {
         display: flex;
@@ -190,7 +192,7 @@
     }
 
     .registration-form-wrapper .form-left {
-        height: 70vh;
+        height:70vh;
         width: 50%;
 
     }
@@ -222,6 +224,20 @@
         height: 5rem;
         min-width: 40%;
     }
+
+    /* --Join -Code-- */
+    .registration-form-wrapper .form-left {
+        min-height: 75vh;
+    }
+
+    .registration-form-wrapper .form-right {
+        min-height: 75vh;
+    }
+
+    .registration-form-wrapper .form-left .head {
+        bottom: 10rem;
+
+    }
 }
 
 @media(max-width:786px) {
@@ -236,6 +252,7 @@
         justify-content: center;
         align-items: center;
         margin-top: 2rem;
+        gap: 3rem;
     }
 
     .registration-form-wrapper .input-box {
@@ -243,19 +260,18 @@
     }
 
     .registration-form-wrapper .form-left {
-        height: 85vh;
+        /* height: 85vh; */
         min-width: 90%;
     }
 
     .registration-form-wrapper .form-right {
-        height: 78vh;
+        /* height: 85vh; */
         min-width: 90%;
     }
 
     .registration-form-wrapper .input-box input {
         font-size: 2.5rem;
         height: 6rem;
-
     }
 
     .registration-form-wrapper .input-box {
@@ -264,10 +280,18 @@
 
     .registration-form-wrapper .input-box button {
         font-size: 3rem;
-        height: 7rem;
-        min-width: 40%;
+        height: 6rem;
+        min-width: 35%;
     }
 
+    .registration-form-wrapper .form-left .head {
+        font-size: 3rem;
+        height: 7rem;
+    }
+
+    .registration-form-wrapper .form-left .head p {
+        font-size: 2rem;
+    }
 
 
 
@@ -332,15 +356,18 @@
     .about-content h2 {
         text-align: center;
     }
+
     .icons-option .icon11 span h1 {
-    font-size: 2rem;
-    
-}
-    .icons-option .icon11 h3{
         font-size: 2rem;
-        min-width:80%;
+
+    }
+
+    .icons-option .icon11 h3 {
+        font-size: 2rem;
+        min-width: 80%;
         line-height: 3rem;
     }
+
     /* .review-code */
     .review-item p {
         font-size: 2.5rem;
@@ -418,7 +445,8 @@
         width: 12.5rem;
         font-size: 4rem;
     }
-.contact-right .right-msg h1 {
+
+    .contact-right .right-msg h1 {
         font-size: 3rem;
     }
 
@@ -451,7 +479,7 @@
     .about-img img {
         width: 80vw;
         margin-top: 4rem;
-       
+
     }
 
     .logo {
@@ -509,12 +537,31 @@
         min-width: 100%;
         padding-inline-start: 1rem;
     }
-    
+
 
     /* .review  */
     .review-item p {
         font-size: 2.5rem;
         line-height: 3rem;
+    }
+     .registration-form-wrapper .form-left {
+        height:75vh;
+        min-width: 90%;
+    }
+
+    .registration-form-wrapper .form-right {
+        height: 75vh;
+        min-width: 90%;
+    }
+    .registration-form-wrapper .form-left .head{
+        bottom: 8rem;
+    }
+    .registration-form-wrapper .input-box input {
+        height: 5rem;
+        font-size: 3rem;
+    }
+    .registration-form-wrapper .form-left img{
+        height: 60vh;
     }
 }
 
@@ -560,7 +607,7 @@
 
     .home-content p {
         font-size: 2rem;
-        max-width:80%;
+        max-width: 80%;
     }
 
     .home-content {
@@ -584,18 +631,19 @@
 
     /* about */
 
-.icons-option .icon11 h3{
+    .icons-option .icon11 h3 {
         font-size: 2rem;
-       
+
         line-height: 3rem;
     }
 
-        /* ..contact-code- */
-    .image-contact .para-info-main{
+    /* ..contact-code- */
+    .image-contact .para-info-main {
         text-align: justify;
         padding: 1.6rem;
-        font-size: 2.7rem;
+        font-size: 2.2rem;
     }
+
     .contact-left {
         align-items: start;
         min-width: 90%;
@@ -604,29 +652,51 @@
 
     .contact-left .left-item .item-name .email-add {
         max-width: 10vw;
-        
-   }
-   .contact-left .left-item .left-icon {
-     height: 6rem;
+
+    }
+
+    .contact-left .left-item .left-icon {
+        height: 6rem;
         width: 8rem;
-   }
-   .contact-left .left-item .left-icon i {
-    font-size: 3.5rem;
-   }
-   .contact-left .left-item .item-name p {
-    font-size: 2.4rem;
-}
-.contact-right .right-item .input input {
-    font-size: 2.4rem;
-}
-.contact-right .right-item .input textarea {
-    font-size: 2.4rem;
-    min-height:5rem;
-}
-.contact-right .right-item .button2 button {
-     height: 5rem;
+    }
+
+    .contact-left .left-item .left-icon i {
+        font-size: 3.5rem;
+    }
+
+    .contact-left .left-item .item-name p {
+        font-size: 2rem;
+    }
+
+    .contact-right .right-item .input input {
+        font-size: 2.4rem;
+    }
+
+    .contact-right .right-item .input textarea {
+        font-size: 2.4rem;
+        min-height: 5rem;
+    }
+
+    .contact-right .right-item .button2 button {
+        height: 5rem;
         width: 12rem;
         font-size: 2.5rem;
-}
+    }
 
+    /* --Join-code */
+    .registration-form-wrapper .form-left img {
+        height: 50vh;
+    }
+    .registration-form-wrapper .form-left {
+        height:30%;
+        min-width: 90%;
+    }
+
+    .registration-form-wrapper .form-right {
+        min-height: 10vh;
+        min-width: 90%;
+    }
+    .registration-form-wrapper .input-box button {
+        min-width: 50%;
+    }
 }

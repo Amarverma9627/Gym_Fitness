@@ -57,37 +57,48 @@ section {
 .registration-form-wrapper .form-left {
     height: 82vh;
     width: 35%;
-      border-radius: 5px 0 0px 5px;
+    border-radius: 5px 0 0px 5px;
 }
 
 .registration-form-wrapper .form-left {
-    background-image: url('Registration-pic/pic4.png');
-    background-size: contain;
-    background-repeat: no-repeat;
     background-color: rgb(255, 255, 255);
-    display: flex;
+     position: relative;
+    /* display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
+}
+
+.registration-form-wrapper .form-left img {
+    overflow: hidden;
+    background-size: cover;
+    height:70vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-color: rgb(255, 255, 255);
+   
 }
 
 .registration-form-wrapper .form-left .head {
-    height: 3rem;
+    position: absolute;
+    height: 6rem;
     width: 100%;
+    overflow: hidden;
     color: #000;
     text-align: center;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    margin-top: 26.5rem;
-    background-color: #fff;
+   bottom: 7.5rem;
+    background-color: #f1e316;
 
 }
 
 .registration-form-wrapper .form-left p {
     width: 100%;
-    color: #000;
+    color: rgb(185, 9, 255);
     text-align: center;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 1.3rem;
+
 }
 
 .registration-form-wrapper .form-right {
@@ -161,7 +172,7 @@ section {
 
     opacity: 0.6;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    
+
 }
 
 .registration-form-wrapper .input-box button {
