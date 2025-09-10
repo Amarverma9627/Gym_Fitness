@@ -697,15 +697,27 @@
         height: 40vh;
     }
     .registration-form-wrapper .form-left {
-        min-height: 50vh;
+        min-height: 35vh;
       
     }
 
     .registration-form-wrapper .form-right {
-        min-height: 50vh;
+        min-height:35vh;
         
     }
+    .registration-form-wrapper .input-box {
+        row-gap: 2rem;
+    }
+    .registration-form-wrapper .input-box input{
+        height: 4rem;
+        font-size: 2rem;
+    }
+    .registration-form-wrapper .input-box textarea{
+        height: 5rem;
+        font-size: 2rem;
+    }
     .registration-form-wrapper .input-box button {
-  
+        height: 4rem;
+        font-size: 2.5rem;
     }
 }
