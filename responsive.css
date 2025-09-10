@@ -192,14 +192,11 @@
     }
 
     .registration-form-wrapper .form-left {
-        height:70vh;
         width: 50%;
-
     }
 
     .registration-form-wrapper .form-right {
         border: 1px solid white;
-        height: 70vh;
         width: 50%;
     }
 
@@ -560,6 +557,10 @@
     }
     .registration-form-wrapper .form-left .head{
         bottom: 8rem;
+        height: 10rem;
+    }
+    .registration-form-wrapper .form-left .head p{
+        font-size: 1.6rem;
     }
     .registration-form-wrapper .input-box input {
         height: 5rem;
@@ -697,13 +698,13 @@
         height: 40vh;
     }
     .registration-form-wrapper .form-left {
-        min-height: 35vh;
+        min-height: 48vh;
       
     }
 
     .registration-form-wrapper .form-right {
         min-height:35vh;
-        
+        padding-block:0rem 2rem;
     }
     .registration-form-wrapper .input-box {
         row-gap: 2rem;
@@ -719,5 +720,9 @@
     .registration-form-wrapper .input-box button {
         height: 4rem;
         font-size: 2.5rem;
+    }
+    .registration-form-wrapper .form-left .head{
+      font-size: 2.5rem;
+      bottom: 5rem;
     }
 }

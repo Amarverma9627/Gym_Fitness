@@ -55,7 +55,7 @@ section {
 }
 
 .registration-form-wrapper .form-left {
-    height: 82vh;
+    min-height:82vh;
     width: 35%;
     border-radius: 5px 0 0px 5px;
 }
@@ -103,7 +103,7 @@ section {
 
 .registration-form-wrapper .form-right {
     border: 1px solid white;
-    height: 82vh;
+     min-height:82vh;
     width: 35%;
     /* background-color: transparent; */
     background-color: rgb(64, 64, 68);
