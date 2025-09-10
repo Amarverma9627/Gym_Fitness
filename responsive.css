@@ -260,12 +260,14 @@
     }
 
     .registration-form-wrapper .form-left {
-        /* height: 85vh; */
+  
+        min-height: 85vh;
         min-width: 90%;
     }
 
     .registration-form-wrapper .form-right {
-        /* height: 85vh; */
+        
+        min-height: 85vh;
         min-width: 90%;
     }
 
@@ -545,23 +547,30 @@
         line-height: 3rem;
     }
      .registration-form-wrapper .form-left {
-        height:75vh;
-        min-width: 90%;
+          min-height: 70vh;
+     
     }
 
     .registration-form-wrapper .form-right {
-        height: 75vh;
+          min-height: 70vh;
         min-width: 90%;
+    }
+    .registration-form-wrapper .input-box{
+        row-gap: 3.5rem;
     }
     .registration-form-wrapper .form-left .head{
         bottom: 8rem;
     }
     .registration-form-wrapper .input-box input {
         height: 5rem;
+        
         font-size: 3rem;
     }
     .registration-form-wrapper .form-left img{
-        height: 60vh;
+        height: 55vh;
+    }
+    .registration-form-wrapper .input-box button {
+        min-width:50%;
     }
 }
 
@@ -685,18 +694,18 @@
 
     /* --Join-code */
     .registration-form-wrapper .form-left img {
-        height: 50vh;
+        height: 40vh;
     }
     .registration-form-wrapper .form-left {
-        height:30%;
-        min-width: 90%;
+        min-height: 50vh;
+      
     }
 
     .registration-form-wrapper .form-right {
-        min-height: 10vh;
-        min-width: 90%;
+        min-height: 50vh;
+        
     }
     .registration-form-wrapper .input-box button {
-        min-width: 50%;
+  
     }
 }
