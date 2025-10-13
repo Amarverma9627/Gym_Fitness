@@ -7,7 +7,9 @@
     border: none;
     scroll-behavior: smooth;
     outline: none;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+    
+  font-family: 'Poppins', 'Roboto', Arial, sans-serif;
 }
 
 :root {
@@ -463,72 +465,6 @@ header,
 
 /* review section code */
 
-.review {
-    background: var(--bg-color);
-}
-
-.review-box {
-    background-size: cover;
-    /* display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column; */
-}
-
-.review .heading {
-    margin-bottom: 5rem;
-}
-
-.review-box img {
-    width: 15rem;
-    height: 15rem;
-    border-radius: 50%;
-    border: 0.2rem solid var(--main-color);
-}
-
-.wrapper {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(35rem, auto));
-    /* grid-template-columns: repeat(3,35rem ); */
-    gap: 3rem;
-
-}
-
-.review-item {
-    border: 1px solid rgba(255, 255, 255, 0.24);
-    border-radius: 2rem;
-    margin: 0 2rem;
-    padding: 3rem 4rem;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    color: #fff;
-    transition: 0.5s ease-in-out;
-}
-
-.review-item:hover {
-    border: 2px solid var(--main-color);
-    transform: translateY(-0.5rem) scale(1.05);
-}
-
-.review-item h2 {
-    font-size: 2.8rem;
-
-}
-
-.review-item p {
-    font-size: 1.5rem;
-    line-height: 1.5rem;
-    text-align: center;
-}
-
-.review-item #star {
-    color: rgb(233, 174, 14);
-    font-size: 2rem;
-}
 
 /* Contact-Section-code */
 .image-contact {
@@ -749,3 +685,14 @@ header,
     background: rgba(255, 255, 255, 0.404);
     width: 50%;
 }
+
+
+
+
+
+
+
+
+
+
+

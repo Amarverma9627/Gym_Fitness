@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="responsive.css">
     <link rel="icon" href="assets/Lodha-icon.jpg">
+    <link rel="stylesheet" href="Review.css">
 </head>
 
 <body>
@@ -232,147 +233,100 @@
     </section>
 
     <!-- section-review-code -->
-    <section class="review" id="review">
-        <div class="review-box">
-            <h2 class="heading">Client <span>Review</span></h2>
+  
+<section class="review-section">
+  <h2 class="section-title">Client <span>Reviews</span></h2>
+  <form id="reviewForm" class="review-form">
+    <input type="text" id="name" placeholder="Name" required />
+    <select id="rating" required>
+      <option value="" disabled selected>Rating</option>
+      <option value="1">⭐️</option>
+      <option value="2">⭐️⭐️</option>
+      <option value="3">⭐️⭐️⭐️</option>
+      <option value="4">⭐️⭐️⭐️⭐️</option>
+      <option value="5">⭐️⭐️⭐️⭐️⭐️</option>
+    </select>
+    <textarea id="message" placeholder="Your review..." required></textarea>
+    <button type="submit" class="btn">Add Review</button>
+  </form>
+  <div class="card-grid" id="reviews"></div>
+  <!-- overview -->
+    <div class="overview-container" role="region" aria-label="Ratings Overview">
+    <h3>Ratings Overview</h3>
+    <div class="overall-rating" aria-live="polite" aria-atomic="true">
+      <i class="fa fa-star" aria-hidden="true"></i>
+      <span id="avgRating">0.0</span>/5.0
+    </div>
+    <div class="overview-info" id="reviewCount" aria-live="polite" aria-atomic="true">0 reviews submitted</div>
+    <div class="rating-bars" aria-label="Rating distribution bars">
+      <!-- Bars inserted dynamically with JS -->
+    </div>
+  </div>
+</section>
+ 
 
-            <div class="wrapper">
-                <div class="review-item">
-                    <img src="assets/vivek.jpg" alt="">
-                    <h2>Vivek</h2>
-                    <div class="rating">
-                        <i class="fa fa-star" aria-hidden="true" id="star"></i>
-                        <i class="fa fa-star" aria-hidden="true" id="star"></i>
-                        <i class="fa fa-star" aria-hidden="true" id="star"></i>
-                        <i class="fa fa-star" aria-hidden="true" id="star"></i>
-                        <i class="fa fa-star" aria-hidden="true" id="star"></i>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, consequuntur excepturi!</p>
-                </div>
-                <div class="review-item">
-                    <img src="assets/image1.jpg" alt="">
-                    <h2>Tarun Thakur</h2>
-                    <div class="rating">
-                        <i class="fa fa-star" aria-hidden="true" id="star"></i>
-                        <i class="fa fa-star" aria-hidden="true" id="star"></i>
-                        <i class="fa fa-star" aria-hidden="true" id="star" style="color: aliceblue;"></i>
-                        <i class="fa fa-star" aria-hidden="true" id="star" style="color: aliceblue;"></i>
-                        <i class="fa fa-star" aria-hidden="true" id="star" style="color: aliceblue;"></i>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, consequuntur excepturi! </p>
-                </div>
-                <div class="review-item">
-                    <img src="assets/sunil.jpg" alt="">
-                    <h2>Sunil Rajput</h2>
-                    <div class="rating">
-                        <i class="fa fa-star" aria-hidden="true" id="star"></i>
-                        <i class="fa fa-star" aria-hidden="true" id="star"></i>
-                        <i class="fa fa-star" aria-hidden="true" id="star"></i>
-                        <i class="fa fa-star" aria-hidden="true" id="star"></i>
-                        <i class="fa fa-star" aria-hidden="true" id="star"></i>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, consequuntur excepturi! </p>
-                </div>
-                <div class="review-item">
-                    <img src="assets/image2.jpg" alt="">
-                    <h2>Sonu Verma</h2>
-                    <div class="rating">
-                        <i class="fa fa-star" aria-hidden="true" id="star"></i>
-                        <i class="fa fa-star" aria-hidden="true" id="star"></i>
-                        <i class="fa fa-star" aria-hidden="true" id="star"></i>
-                        <i class="fa fa-star" aria-hidden="true" id="star" style="color: aliceblue;"></i>
-                        <i class="fa fa-star" aria-hidden="true" id="star" style="color: aliceblue;"></i>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, consequuntur excepturi! </p>
-                </div>
-                <div class="review-item">
-                    <img src="assets/image4.jpg" alt="">
-                    <h2>Pradeep kumar </h2>
-                    <div class="rating">
-                        <i class="fa fa-star" aria-hidden="true" id="star"></i>
-                        <i class="fa fa-star" aria-hidden="true" id="star"></i>
-                        <i class="fa fa-star" aria-hidden="true" id="star"></i>
-                        <i class="fa fa-star" aria-hidden="true" id="star"></i>
-                        <i class="fa fa-star" aria-hidden="true" id="star" style="color: aliceblue;"></i>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, consequuntur excepturi! </p>
-                </div>
-                <div class="review-item">
-                    <img src="assets/2.jpg" alt="">
-                    <h2>Gaurav Lodhi</h2>
-                    <div class="rating">
-                        <i class="fa fa-star" aria-hidden="true" id="star"></i>
-                        <i class="fa fa-star" aria-hidden="true" id="star"></i>
-                        <i class="fa fa-star" aria-hidden="true" id="star"></i>
-                        <i class="fa fa-star" aria-hidden="true" id="star"></i>
-                        <i class="fa fa-star" aria-hidden="true" id="star" style="color: aliceblue;"></i>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, consequuntur excepturi! </p>
-                </div>
-            </div>
-        </div>
-    </section>
     <!-- Contact-section-code -->
-    <section class="image-contact" id="img-contact">
-        <div class="layer"></div>
-      
-        <h1 class="heading img-h">Contact <span style="color: red;">Us</span></h1>
-        <p class="para-info-main">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, reprehenderit aliquid! Itaque soluta debitis dolorem harum ipsum veniam qui consectetur. Eligendi officia facere ab nesciunt laborum aliquid. Molestiae, quod et.</p>
-        <div  class="contact-leftRight-Container">
-            <div class="contact-left">
-                <div class="left-item">
-                    <div class="left-icon">
-                       <i class="fa fa-map-marker" aria-hidden="true"></i>
-                    </div>
-                    <div class="left-address-info item-name">
-                        <h1 class="logo-name">Address</h1>
-                        <p>Sector 44 Chhelara Gali no. 1 <br/>Noida Uttar Pradesh</p>
-                    </div>
+   <!-- Contact-section-code -->
+<section class="image-contact" id="img-contact">
+    <div class="layer"></div>
+
+    <h1 class="heading img-h">Contact <span style="color: red;">Us</span></h1>
+    <p class="para-info-main">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, reprehenderit aliquid! Itaque soluta debitis dolorem harum ipsum veniam qui consectetur. Eligendi officia facere ab nesciunt laborum aliquid. Molestiae, quod et.</p>
+    <div class="contact-leftRight-Container">
+        <div class="contact-left">
+            <div class="left-item">
+                <div class="left-icon">
+                   <i class="fa fa-map-marker" aria-hidden="true"></i>
                 </div>
-                <div class="left-item">
-                    <div class="left-icon">
-                       <i id="mobile" class="fa fa-mobile" aria-hidden="true"></i>
-                    </div>
-                    <div class="phn-text item-name">
-                       <h1 class="logo-name">Phone</h1>
-                       <p>  +919627195219</p>
-                    </div>
-                    
-                </div>
-                <div class="left-item">
-                    <div class="left-icon">
-                       <i id="email" class="fa fa-envelope-o" aria-hidden="true"></i>
-                    </div>
-                    <div class="left-email item-name">
-                       <h1 class="logo-name">Email</h1>
-                       <p class="email-add">
-                          amarverma9627@gmail.com
-                       </p>
-                    </div>
-                  
+                <div class="left-address-info item-name">
+                    <h1 class="logo-name">Address</h1>
+                    <p>Sector 44 Chhelara Gali no. 1 <br/>Noida Uttar Pradesh</p>
                 </div>
             </div>
-            <div class="contact-right">
-                <div class="right-msg">
-                    <h1>Send Message</h1>
+            <div class="left-item">
+                <div class="left-icon">
+                   <i id="mobile" class="fa fa-mobile" aria-hidden="true"></i>
                 </div>
-                <div class="right-item">
-                    <div class="input">
-                        <input type="name" placeholder="Full Name">
-                    </div>
-                    <div class="input">
-                        <input type="email" placeholder="Email">
-                    </div>
-                    <div class="input">
-                       <textarea placeholder="Type your Message..."></textarea>
-                    </div>
-                    <div class="button2">
-                        <button>Send</button>
-                    </div>
+                <div class="phn-text item-name">
+                   <h1 class="logo-name">Phone</h1>
+                   <p> +919627195219</p>
+                </div>
+            </div>
+            <div class="left-item">
+                <div class="left-icon">
+                   <i id="email" class="fa fa-envelope-o" aria-hidden="true"></i>
+                </div>
+                <div class="left-email item-name">
+                   <h1 class="logo-name">Email</h1>
+                   <p class="email-add">
+                     <a href="mailto:amarverma9627@gmail.com">amarverma9627@gmail.com</a>
+                   </p>
                 </div>
             </div>
         </div>
-    </section>
+        <div class="contact-right">
+            <div class="right-msg">
+                <h1>Send Message</h1>
+            </div>
+            <form id="contact-form" class="right-item"> <!-- Added form -->
+                <div class="input">
+                    <input type="text" name="fullname" placeholder="Full Name" required>
+                </div>
+                <div class="input">
+                    <input type="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="input">
+                   <textarea name="message" placeholder="Type your Message..." required></textarea>
+                </div>
+                <div class="button2">
+                    <button type="submit">Send</button> <!-- Submit button inside form -->
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+
     <!-- footer section code -->
 
     <footer class="footer">
@@ -395,6 +349,8 @@
     </script>
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script src="script.js"></script>
+
+    <script src="https://cdn.emailjs.com/sdk/3.2/email.min.js"></script>
 
 </body>
 
