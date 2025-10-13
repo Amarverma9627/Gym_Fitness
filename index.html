@@ -235,7 +235,7 @@
     <!-- section-review-code -->
   
 <section class="review-section">
-  <h2 class="section-title">Client <span>Reviews</span></h2>
+  <h2 class="section-title">Client <span >Reviews</span></h2>
   <form id="reviewForm" class="review-form">
     <input type="text" id="name" placeholder="Name" required />
     <select id="rating" required>
@@ -251,17 +251,20 @@
   </form>
   <div class="card-grid" id="reviews"></div>
   <!-- overview -->
-    <div class="overview-container" role="region" aria-label="Ratings Overview">
-    <h3>Ratings Overview</h3>
-    <div class="overall-rating" aria-live="polite" aria-atomic="true">
-      <i class="fa fa-star" aria-hidden="true"></i>
-      <span id="avgRating">0.0</span>/5.0
-    </div>
-    <div class="overview-info" id="reviewCount" aria-live="polite" aria-atomic="true">0 reviews submitted</div>
-    <div class="rating-bars" aria-label="Rating distribution bars">
-      <!-- Bars inserted dynamically with JS -->
-    </div>
+
+   <div class="main-container">
+     <div class="overview-container" role="region" aria-label="Ratings Overview">
+        <h3>Ratings Overview</h3>
+        <div class="overall-rating" aria-live="polite" aria-atomic="true">
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <span id="avgRating">0.0</span>/5.0
+        </div>
+        <div class="overview-info" id="reviewCount" aria-live="polite" aria-atomic="true">0 reviews submitted</div>
+        <div class="rating-bars" aria-label="Rating distribution bars">
+            <!-- Bars inserted dynamically with JS -->
+        </div>
   </div>
+   </div>
 </section>
  
 

@@ -18,22 +18,19 @@
 }
 
 .section-title {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
     text-align: center;
-    color: var(--main);
-    font-weight: 700;
+    color:white;
+    font-weight: 800;
     margin-bottom: 2.15rem;
-    background: -webkit-linear-gradient(99deg, var(--pink), var(--pastel));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
 }
 
 .section-title span {
     background: linear-gradient(91deg, var(--pastel), var(--pink));
-    color: transparent;
+    color:red;
     -webkit-background-clip: text;
     background-clip: text;
-    font-weight: 700;
+    font-weight: 800;
 }
 
 .review-form {
@@ -247,13 +244,21 @@
     .review-form input,
     .review-form select,
     .review-form textarea {
-        min-width: 110px;
+        min-width:90%;
         font-size: .98rem;
         padding: .64rem .58rem;
     }
-
+    #reviewForm .btn {
+        width: 13rem;
+    }
+    .review-form input,.review-form select, .review-form textarea{
+        height: 5rem;
+        font-size: 2rem;
+    }
+   
     .card-grid {
-        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(250px,auto));
+        padding: 2rem;
     }
 
     .review-section {
@@ -263,6 +268,16 @@
     .section-title {
         font-size: 1.4rem;
     }
+    .delete-btn {
+          font-size: 3.04rem;
+    }
+    .card-content {
+        font-size: 2rem;
+    }
+    .card-name {
+        font-size: 2rem
+    };
+
 }
 
 /* overvoew */
@@ -276,15 +291,21 @@
     --radius: 16px;
     --font: 'Poppins', 'Inter', Arial, sans-serif;
   }
- 
-  .overview-container {
-    max-width:100%;
-    background: white;
+ .main-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     max-width:100%;
     border-radius: var(--radius);
     box-shadow: 0 8px 32px #a3cefc44;
-    padding: 2rem 2.5rem;
     text-align: center;
-    margin-top: 2rem;
+    margin-top: 3rem;
+ }
+  .overview-container {
+    width:100%;
+    padding: 2rem;
+   background: white;
+    border-radius: var(--radius);
   }
   h3 {
     font-weight: 700;
@@ -352,13 +373,17 @@
   }
   @media (max-width: 480px) {
     .overview-container {
-      max-width: 100%;
-      padding: 1.5rem;
+      max-width: 90%;
+      padding: 2rem;
+      
     }
     .overall-rating {
       font-size: 3rem;
     }
     .overall-rating i {
       font-size: 3.4rem;
+    }
+      .bar-container {
+        height: 10px;
     }
   }
