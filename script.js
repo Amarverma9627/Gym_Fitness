@@ -31,6 +31,12 @@ function validateGmail(email) {
   return /^[a-zA-Z0-9._%+-]+@gmail\.com$/i.test(email);
 }
 
+function setLastUsedGmail(gmail) {
+  localStorage.setItem('lastUsedGmail', gmail);
+}
+function getLastUsedGmail() {
+  return localStorage.getItem('lastUsedGmail') || '';
+}
 
 gmailInput.addEventListener('input', function () {
   submitBtn.disabled = !validateGmail(gmailInput.value.trim());
@@ -78,11 +84,21 @@ function renderReviews() {
   else if (currentSort === "high") data = [...data].sort((a, b) => b.rating - a.rating);
 
   // Legacy data fix: assign missing id values
+
   let fixed = false;
-  data.forEach((rev) => {
-    if (!rev.id) { rev.id = Date.now() + '_' + Math.floor(Math.random() * 1e6); fixed = true; }
+  data.forEach(rev => {
+    if (!rev.id) {
+      rev.id = Date.now() + '_' + Math.floor(Math.random() * 1e6);
+      fixed = true;
+    }
+    if (typeof rev.likes === "undefined") rev.likes = 0;
+    if (typeof rev.comments === "undefined") rev.comments = [];
+    if (typeof rev.shares === "undefined") rev.shares = 0;
   });
+
+  // Only save if we made changes to legacy (pre-existing) reviews
   if (fixed) saveReviews(data);
+
 
   reviewsList.innerHTML = '';
   data.forEach((rev, idx) => {
@@ -95,7 +111,7 @@ function renderReviews() {
     card.className = 'review-card';
     card.innerHTML = `
       <div class="card-top">
-        <img class="card-avatar" src="${AVATARS[idx%AVATARS.length]}" alt="Avatar"/>
+        <img class="card-avatar" src="${AVATARS[idx % AVATARS.length]}" alt="Avatar"/>
         <div class="card-info">
           <div class="card-name"><b>Name:</b> ${rev.name}</div>
           <div class="card-gmail"><b>Email:</b> ${rev.gmail}</div>
@@ -113,31 +129,36 @@ function renderReviews() {
     reviewsList.appendChild(card);
   });
 
- // Helpful button click handler with email validation and one-time like per email+review
-  reviewsList.querySelectorAll('.helpful-btn').forEach(btn => btn.onclick = function(){
+  // Helpful button click handler with email validation and one-time like per email+review
+  reviewsList.querySelectorAll('.helpful-btn').forEach(btn => btn.onclick = function () {
+    // Use the gmail of this review as the unique key
     const reviewId = this.dataset.id;
-    const userGmail = gmailInput.value.trim();
-    if (!validateGmail(userGmail)) {
-      showModal("Enter a valid Gmail in the form to mark helpful.");
-      return;
-    }
+    let reviews = getReviews();
+    let idx = reviews.findIndex(r => r.id === reviewId);
+
+    if (idx === -1) return; // not found
+
+    const reviewGmail = reviews[idx].gmail;
+
+    // Use their gmail as the key for marking helpful, prevents duplicate per user per review
     let helpfulMap = getHelpfulMap();
-    let mapKey = `${userGmail}_${reviewId}`;
+    let mapKey = `${reviewGmail}_${reviewId}`;
     if (helpfulMap[mapKey]) {
-      showModal('You already marked this as helpful.');
+      showModal('You have already marked this as helpful!');
       return;
     }
 
-    let reviews = getReviews();
-    let idx = reviews.findIndex(r => r.id === reviewId);
-    if (idx > -1) {
-      reviews[idx].likes = (reviews[idx].likes || 0) + 1;
-      saveReviews(reviews);
-      helpfulMap[mapKey] = true;
-      saveHelpfulMap(helpfulMap);
-      renderOverview(); renderReviews();
-    }
+    reviews[idx].likes = (reviews[idx].likes || 0) + 1;
+    saveReviews(reviews);
+    helpfulMap[mapKey] = true;
+    saveHelpfulMap(helpfulMap);
+    renderOverview();
+    renderReviews();
   });
+
+
+
+
 
 
   reviewsList.querySelectorAll('.comment-btn').forEach(btn => btn.onclick = function () {
@@ -151,7 +172,7 @@ function renderReviews() {
     const reviewId = this.dataset.id;
     let reviews = getReviews().filter(r => r.id !== reviewId);
     saveReviews(reviews);
-    renderOverview();   
+    renderOverview();
     renderReviews();
   });
 
@@ -229,15 +250,15 @@ reviewForm.addEventListener('submit', e => {
   if (gmail && name && rating && message) {
     const reviews = getReviews();
     reviews.push({
-  gmail,
-  name,
-  rating,
-  message,
-  likes: 0,
-  comments: [],
-  shares: 0,
-  id: Date.now() + '_' + Math.floor(Math.random() * 1e6)
-});
+      gmail,
+      name,
+      rating,
+      message,
+      likes: 0,
+      comments: [],
+      shares: 0,
+      id: Date.now() + '_' + Math.floor(Math.random() * 1e6)
+    });
 
     saveReviews(reviews);
     renderReviews();
@@ -255,25 +276,27 @@ window.onload = () => {
 
 //popup for form
 
-openBtn.onclick = function() {
-  popup2.style.display = 'flex';
+openBtn.onclick = function () {
+  popup2.style.display = 'flex';
 };
 
-closeBtn.onclick = function() {
-  popup2.style.display = 'none';
+closeBtn.onclick = function () {
+  popup2.style.display = 'none';
 };
 
-window.onclick = function(event) {
-  if (event.target === popup2) {
-    popup2.style.display = 'none';
-  }
+window.onclick = function (event) {
+  if (event.target === popup2) {
+    popup2.style.display = 'none';
+  }
 };
 
 // Add this to redirect after form submit
-reviewForm2.onsubmit = function(event) {
-  event.preventDefault(); // Prevent actual submission
-  popup2.style.display = 'none'; // Hide the popup
-reviewForm2.reset();
+reviewForm2.onsubmit = function (event) {
+  event.preventDefault(); // Prevent actual submission
+  popup2.style.display = 'none'; // Hide the popup
+  setLastUsedGmail(gmailInput.value.trim());
+
+  reviewForm2.reset();
 
 };
 
