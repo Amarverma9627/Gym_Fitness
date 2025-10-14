@@ -580,6 +580,10 @@
 }
 
 @media(max-width:450px) {
+    .sup-list{
+        min-width: 80vw;
+        margin-left: -3rem;
+    }
     html {
         font-size: 50%;
     }

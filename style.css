@@ -7,9 +7,7 @@
     border: none;
     scroll-behavior: smooth;
     outline: none;
-    /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
-    
-  font-family: 'Poppins', 'Roboto', Arial, sans-serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 :root {
@@ -258,6 +256,9 @@ header,
     padding-block-end: 1rem;
     margin-top: 3rem;
 }
+.sup-list{
+    width: 100%;
+}
 
 /* about.section code */
 
@@ -424,7 +425,7 @@ header,
     line-height: 4.2rem;
     border-radius: 2.7rem;
     border: 0.1rem solid white;
-    padding: 2rem;
+    padding: 4rem;
     transition: all 0.5s ease;
 }
 
@@ -466,6 +467,7 @@ header,
 /* review section code */
 
 
+
 /* Contact-Section-code */
 .image-contact {
     position: relative;
@@ -490,6 +492,7 @@ header,
 .image-contact .img-h {
     position: relative;
     z-index: 2;
+
 }
 
 .image-contact .para-info-main {
