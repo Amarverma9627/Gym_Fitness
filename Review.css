@@ -55,7 +55,7 @@
   justify-content: center;
   align-items: center;
   width: 30%;
-  min-height: 65vh;
+  height: 65vh;
   background: #fff;
   border-radius: 8px;
   position: relative;
@@ -73,10 +73,11 @@
 /* last */
 .review-form {
   width: 90%;
+  height: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 3rem;
+
   padding-block: 4rem;
   flex-direction: column;
   border-radius: 20px;
@@ -517,6 +518,14 @@
     width: 14rem;
     height: 5rem;
   }
+
+  .popup-content {
+    /* min-width: 55vw; */
+    width: 60%;
+  }
+  .review-form {
+    padding-block: 10rem;
+  }
 }
 
 @media (max-width: 600px) {
@@ -574,6 +583,17 @@
 
   .review-card {
     box-shadow: none;
+  }
+
+  .popup-content {
+    width: 80%;
+  }
+}
+
+@media (max-width: 400px) {
+  .popup-content {
+    min-width:90vw;
+    height:45%;
   }
 }
 
