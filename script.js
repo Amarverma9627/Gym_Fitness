@@ -17,13 +17,41 @@ const openBtn = document.getElementById('openPopupBtn');
 const closeBtn = document.getElementById('closePopupBtn');
 const popup2 = document.getElementById('popup');
 const reviewForm2 = document.getElementById('reviewForm');
-const menuIcon = document.getElementById('menu-icon');
-const optDiv = document.getElementById('opt');
+const menuIcon = document.getElementById('menu-icon');   // three-dot icon
+const cancel = document.getElementById('cancel');        // cross icon container
+const cross = document.getElementById('cross');          // actual <i> for cross
+const optDiv = document.getElementById('opt');           // menu container
 
-//show hide logic for 3-Dot
+// Show menu and cross, hide menu icon
 menuIcon.addEventListener('click', () => {
-  optDiv.classList.toggle('hide');
+  optDiv.classList.remove('hide');
+  menuIcon.style.display = 'none';
+  cancel.style.display = 'block';
 });
+
+// Hide menu, show menu icon, hide cross
+function hideMenu() {
+  optDiv.classList.add('hide');
+  menuIcon.style.display = 'block';
+  cancel.style.display = 'none';
+}
+
+// Hide on cross icon click
+cross.addEventListener('click', hideMenu);
+// (or you may use: cancel.addEventListener('click', hideMenu); if you want whole block clickable)
+
+// Hide on any menu option click
+optDiv.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', hideMenu);
+});
+
+// On load, cross hides and menu icon shows:
+window.onload = function() {
+  optDiv.classList.add('hide');
+  menuIcon.style.display = 'block';
+  cancel.style.display = 'none';
+};
+
 
 const AVATARS = [
   'https://randomuser.me/api/portraits/men/34.jpg',
