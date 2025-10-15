@@ -592,8 +592,8 @@
 
 @media (max-width: 400px) {
   .popup-content {
-    min-width:90vw;
-    height:45%;
+    min-width:75vw;
+    height:55%;
   }
 }
 
