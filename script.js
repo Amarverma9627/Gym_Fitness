@@ -17,6 +17,13 @@ const openBtn = document.getElementById('openPopupBtn');
 const closeBtn = document.getElementById('closePopupBtn');
 const popup2 = document.getElementById('popup');
 const reviewForm2 = document.getElementById('reviewForm');
+const menuIcon = document.getElementById('menu-icon');
+const optDiv = document.getElementById('opt');
+
+//show hide logic for 3-Dot
+menuIcon.addEventListener('click', () => {
+  optDiv.classList.toggle('hide');
+});
 
 const AVATARS = [
   'https://randomuser.me/api/portraits/men/34.jpg',
