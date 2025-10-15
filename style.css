@@ -72,10 +72,13 @@ header,
 }
 
 #cross {
-    display: none;
+    display:none;
     font-size: 2.5rem;
 }
-
+#menu-icon
+{
+    display: none;
+}
 .navbar {
     display: flex;
     margin-left: 25rem;

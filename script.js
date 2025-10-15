@@ -21,38 +21,87 @@ const menuIcon = document.getElementById('menu-icon');   // three-dot icon
 const cancel = document.getElementById('cancel');        // cross icon container
 const cross = document.getElementById('cross');          // actual <i> for cross
 const optDiv = document.getElementById('opt');           // menu container
+const textElement = document.querySelector('.multiple-text');
+const skills = [
+  "Bodybuilding",
+  "Physical Fitness",
+  "Weight Gain",
+  "Strength Training",
+  "WeightLifting",
+  "Running"
 
-// Show menu and cross, hide menu icon
-menuIcon.addEventListener('click', () => {
-  optDiv.classList.remove('hide');
-  menuIcon.style.display = 'none';
-  cancel.style.display = 'block';
-});
+];
+let skillIndex = 0;
+let charIndex = 0;
+let typing = true;
 
-// Hide menu, show menu icon, hide cross
-function hideMenu() {
-  optDiv.classList.add('hide');
-  menuIcon.style.display = 'block';
-  cancel.style.display = 'none';
+function typeSkills() {
+  if (typing) {
+    if (charIndex >= skills[skillIndex].length) {
+      textElement.textContent = skills[skillIndex].substring(0, charIndex);
+      charIndex++;
+      setTimeout(typeSkills, 120);
+    } else {
+      typing = false;
+      setTimeout(typeSkills, 1000); // Pause after complete word
+    }
+  } else {
+    if (charIndex > 0) {
+      textElement.textContent = skills[skillIndex].substring(0, charIndex - 1);
+      charIndex--;
+      setTimeout(typeSkills, 50);
+    } else {
+      typing = true;
+      skillIndex = (skillIndex + 1) % skills.length; // Move to next skill
+      setTimeout(typeSkills, 400);
+    }
+  }
 }
 
-// Hide on cross icon click
-cross.addEventListener('click', hideMenu);
-// (or you may use: cancel.addEventListener('click', hideMenu); if you want whole block clickable)
-
-// Hide on any menu option click
-optDiv.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', hideMenu);
-});
-
-// On load, cross hides and menu icon shows:
-window.onload = function() {
-  optDiv.classList.add('hide');
-  menuIcon.style.display = 'block';
-  cancel.style.display = 'none';
-};
+window.onload = typeSkills;
 
 
+function show() {
+  let showBar = document.getElementById('menu')
+  showBar.setAttribute('class', 'hide')
+  let hideBar = document.getElementById('cancel')
+  hideBar.setAttribute('class', 'show')
+
+  let list = document.getElementById('opt')
+  let res = list.getAttribute('class');
+  if (res == 'hide') {
+    list.setAttribute('class', 'show')
+  }
+}
+
+function hide() {
+  let showBar = document.getElementById('menu')
+  showBar.setAttribute('class', 'show')
+  let hideBar = document.getElementById('cancle')
+  hideBar.setAttribute('class', 'hide')
+
+  let list = document.getElementById('opt')
+  let res = list.getAttribute('class');
+  if (res == 'show'){
+    list.setAttribute('class', 'hide')
+  }
+}
+
+ 
+ window.onscroll=()=>{
+     //when will scrollbar down then navbar will hide
+     let tog=document.getElementById('opt')
+     tog.setAttribute('class','hide');
+    
+    //and then menu-icon will shown in front
+     let nav=document.getElementById('menu');
+     nav.setAttribute('class','show');
+ 
+     //and cross icon will hide but menu icon are shown in front
+     let cross=document.getElementById('cancel')
+     cross.setAttribute('class','hide');
+     
+ }
 const AVATARS = [
   'https://randomuser.me/api/portraits/men/34.jpg',
   'https://randomuser.me/api/portraits/women/45.jpg',
