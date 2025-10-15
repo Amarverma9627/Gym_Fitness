@@ -102,6 +102,16 @@ function hide() {
      cross.setAttribute('class','hide');
      
  }
+ // NEW: Click anywhere outside the menu hides it
+document.addEventListener('click', function(event) {
+  const isClickInsideMenu = optDiv.contains(event.target);
+  const isClickOnMenuIcon = menuIcon.contains(event.target);
+  const isClickOnCross = cross.contains(event.target);
+
+  if (!isClickInsideMenu && !isClickOnMenuIcon && !isClickOnCross) {
+    hideMenu();
+  }
+});
 const AVATARS = [
   'https://randomuser.me/api/portraits/men/34.jpg',
   'https://randomuser.me/api/portraits/women/45.jpg',
