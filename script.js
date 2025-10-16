@@ -75,10 +75,10 @@ function show() {
 }
 
 function hide() {
+  let hideBar = document.getElementById('cancel')
+  hideBar.setAttribute('class', 'hide')
   let showBar = document.getElementById('menu')
   showBar.setAttribute('class', 'show')
-  let hideBar = document.getElementById('cancle')
-  hideBar.setAttribute('class', 'hide')
 
   let list = document.getElementById('opt')
   let res = list.getAttribute('class');

@@ -47,7 +47,7 @@
         top: 7rem;
         right: 0;
         width: 25.5rem;
-        min-height: 80vh;
+        min-height: 100vh;
         display: flex;
         flex-direction: column;
         background: rgb(29, 28, 28);
