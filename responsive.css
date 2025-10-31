@@ -125,10 +125,12 @@
         display: block;
     }
 
-    .about-img img {
+    .about-img .image-left {
         height: auto;
-        width: 76vw;
-        margin-left: 10rem;
+        max-width: 85vw;
+       display: flex;
+       align-items: center;
+       justify-content: center;
 
     }
 
