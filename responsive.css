@@ -98,10 +98,11 @@
         padding: 10rem 3%;
     }
 
-    .services {
-        padding: 7rem;
+    .services-gym {
+        
     }
-
+    
+    
     /* review */
 
     .review-item p {
@@ -648,6 +649,10 @@
         color: var(--text-color);
         opacity: 0.1;
         z-index: -1;
+
+    }
+    /* service -section */
+    .container-fitness .service-card{
 
     }
 

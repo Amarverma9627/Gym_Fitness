@@ -324,7 +324,7 @@
 
  .container-fitness .services-grid {
      display: grid;
-     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+     grid-template-columns: repeat(auto-fit, minmax(320px,auto));
      gap: 2rem;
      animation: fadeInUp 1s ease 0.3s both;
  }
