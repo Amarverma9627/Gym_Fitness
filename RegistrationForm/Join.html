@@ -1,72 +1,862 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Join page</title>
-    <link rel="stylesheet" href="join.css">
-    <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="/responsive.css">
+    <title>Registration Form - ₹1200</title>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <style>
+        :root {
+            --color-white: rgba(255, 255, 255, 1);
+            --color-black: rgba(0, 0, 0, 1);
+            --color-cream-50: rgba(252, 252, 249, 1);
+            --color-cream-100: rgba(255, 255, 253, 1);
+            --color-gray-200: rgba(245, 245, 245, 1);
+            --color-gray-300: rgba(167, 169, 169, 1);
+            --color-gray-400: rgba(119, 124, 124, 1);
+            --color-slate-500: rgba(98, 108, 113, 1);
+            --color-brown-600: rgba(94, 82, 64, 1);
+            --color-charcoal-700: rgba(31, 33, 33, 1);
+            --color-charcoal-800: rgba(38, 40, 40, 1);
+            --color-slate-900: rgba(19, 52, 59, 1);
+            --color-teal-300: rgba(50, 184, 198, 1);
+            --color-teal-400: rgba(45, 166, 178, 1);
+            --color-teal-500: rgba(33, 128, 141, 1);
+            --color-teal-600: rgba(29, 116, 128, 1);
+            --color-teal-700: rgba(26, 104, 115, 1);
+            --color-red-500: rgba(192, 21, 47, 1);
+            --color-orange-500: rgba(168, 75, 47, 1);
+            --color-brown-600-rgb: 94, 82, 64;
+            --color-teal-500-rgb: 33, 128, 141;
+            --color-slate-900-rgb: 19, 52, 59;
+            --color-background: var(--color-cream-50);
+            --color-surface: var(--color-cream-100);
+            --color-text: var(--color-slate-900);
+            --color-text-secondary: var(--color-slate-500);
+            --color-primary: var(--color-teal-500);
+            --color-primary-hover: var(--color-teal-600);
+            --color-primary-active: var(--color-teal-700);
+            --color-secondary: rgba(var(--color-brown-600-rgb), 0.12);
+            --color-border: rgba(var(--color-brown-600-rgb), 0.2);
+            --color-error: var(--color-red-500);
+            --color-success: var(--color-teal-500);
+            --color-focus-ring: rgba(var(--color-teal-500-rgb), 0.4);
+            --color-btn-primary-text: var(--color-cream-50);
+            --font-family-base: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+            --font-size-sm: 12px;
+            --font-size-base: 14px;
+            --font-size-lg: 16px;
+            --font-size-xl: 18px;
+            --font-size-2xl: 20px;
+            --font-size-3xl: 24px;
+            --font-size-4xl: 30px;
+            --font-weight-normal: 400;
+            --font-weight-medium: 500;
+            --font-weight-semibold: 550;
+            --font-weight-bold: 600;
+            --space-4: 4px;
+            --space-8: 8px;
+            --space-12: 12px;
+            --space-16: 16px;
+            --space-20: 20px;
+            --space-24: 24px;
+            --space-32: 32px;
+            --radius-sm: 6px;
+            --radius-base: 8px;
+            --radius-md: 10px;
+            --radius-lg: 12px;
+            --radius-xl: 16px;
+            --radius-full: 9999px;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.04), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.04), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.06), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+            --duration-fast: 150ms;
+            --duration-normal: 250ms;
+            --ease-standard: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --color-gray-400-rgb: 119, 124, 124;
+                --color-teal-300-rgb: 50, 184, 198;
+                --color-gray-300-rgb: 167, 169, 169;
+                --color-gray-200-rgb: 245, 245, 245;
+                --color-background: var(--color-charcoal-700);
+                --color-surface: var(--color-charcoal-800);
+                --color-text: var(--color-gray-200);
+                --color-text-secondary: rgba(var(--color-gray-300-rgb), 0.7);
+                --color-primary: var(--color-teal-300);
+                --color-primary-hover: var(--color-teal-400);
+                --color-secondary: rgba(var(--color-gray-400-rgb), 0.15);
+                --color-border: rgba(var(--color-gray-400-rgb), 0.3);
+                --color-focus-ring: rgba(var(--color-teal-300-rgb), 0.4);
+                --color-btn-primary-text: var(--color-slate-900);
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family-base);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--space-20);
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
+            animation: float 20s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-100px); }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+
+        @keyframes shimmer {
+            0% { background-position: -1000px 0; }
+            100% { background-position: 1000px 0; }
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            animation: fadeInUp 0.8s var(--ease-standard);
+        }
+
+        .registration-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-xl), 0 0 60px rgba(102, 126, 234, 0.3);
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .card-header {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-teal-600) 100%);
+            padding: var(--space-32);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        .header-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--space-16);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            animation: pulse 2s infinite;
+        }
+
+        .header-icon svg {
+            width: 40px;
+            height: 40px;
+            fill: white;
+        }
+
+        .card-header h1 {
+            color: white;
+            font-size: var(--font-size-4xl);
+            font-weight: var(--font-weight-bold);
+            margin-bottom: var(--space-8);
+            position: relative;
+        }
+
+        .card-header p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: var(--font-size-lg);
+        }
+
+        .fee-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.25);
+            color: white;
+            padding: var(--space-8) var(--space-24);
+            border-radius: var(--radius-full);
+            font-size: var(--font-size-2xl);
+            font-weight: var(--font-weight-bold);
+            margin-top: var(--space-16);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .card-body {
+            padding: var(--space-32);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-20);
+        }
+
+        .form-group {
+            margin-bottom: var(--space-20);
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: var(--space-8);
+            font-weight: var(--font-weight-medium);
+            color: var(--color-charcoal-700);
+            font-size: var(--font-size-base);
+        }
+
+        .form-label .required {
+            color: var(--color-error);
+            margin-left: 2px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: var(--space-12) var(--space-16);
+            font-size: var(--font-size-base);
+            border: 2px solid var(--color-border);
+            border-radius: var(--radius-base);
+            background: white;
+            color: var(--color-charcoal-700);
+            transition: all var(--duration-normal) var(--ease-standard);
+            font-family: var(--font-family-base);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--color-primary);
+            box-shadow: 0 0 0 3px var(--color-focus-ring);
+            transform: translateY(-1px);
+        }
+
+        .form-control:hover {
+            border-color: var(--color-primary);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        select.form-control {
+            appearance: none;
+            background-image: url('data:image/svg+xml,<svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 9l6 6 6-6" stroke="%23134252" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+            padding-right: 40px;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: var(--space-8);
+            padding: var(--space-16);
+            background: rgba(var(--color-teal-500-rgb), 0.05);
+            border-radius: var(--radius-base);
+            border: 2px solid rgba(var(--color-teal-500-rgb), 0.1);
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            accent-color: var(--color-primary);
+        }
+
+        .checkbox-group label {
+            cursor: pointer;
+            font-size: var(--font-size-base);
+            color: var(--color-charcoal-700);
+        }
+
+        .payment-methods {
+            margin: var(--space-24) 0;
+            padding: var(--space-20);
+            background: rgba(var(--color-teal-500-rgb), 0.05);
+            border-radius: var(--radius-base);
+            border: 2px solid rgba(var(--color-teal-500-rgb), 0.1);
+        }
+
+        .payment-methods h3 {
+            color: var(--color-text);
+            font-size: var(--font-size-lg);
+            margin-bottom: var(--space-16);
+            display: flex;
+            align-items: center;
+            gap: var(--space-8);
+        }
+
+        .payment-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: var(--space-12);
+        }
+
+        .payment-option {
+            padding: var(--space-12);
+            background: white;
+            border: 2px solid var(--color-border);
+            border-radius: var(--radius-base);
+            text-align: center;
+            font-size: var(--font-size-sm);
+            color: var(--color-text-secondary);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--space-4);
+        }
+
+        .payment-option svg {
+            width: 32px;
+            height: 32px;
+            fill: var(--color-primary);
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: var(--space-16);
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-teal-600) 100%);
+            color: white;
+            border: none;
+            border-radius: var(--radius-base);
+            font-size: var(--font-size-lg);
+            font-weight: var(--font-weight-bold);
+            cursor: pointer;
+            transition: all var(--duration-normal) var(--ease-standard);
+            box-shadow: 0 4px 15px rgba(var(--color-teal-500-rgb), 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-submit::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn-submit:hover::before {
+            left: 100%;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(var(--color-teal-500-rgb), 0.4);
+        }
+
+        .btn-submit:active {
+            transform: translateY(0);
+        }
+
+        .btn-submit:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .btn-submit:focus {
+            outline: 2px solid var(--color-primary);
+            outline-offset: 2px;
+        }
+
+        .error-message {
+            color: var(--color-error);
+            font-size: var(--font-size-sm);
+            margin-top: var(--space-4);
+            display: none;
+        }
+
+        .error-message.show {
+            display: block;
+            animation: fadeInUp 0.3s var(--ease-standard);
+        }
+
+        .success-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(5px);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            animation: fadeInUp 0.3s var(--ease-standard);
+        }
+
+        .success-modal.show {
+            display: flex;
+        }
+
+        .success-content {
+            background: white;
+            padding: var(--space-32);
+            border-radius: var(--radius-xl);
+            text-align: center;
+            max-width: 400px;
+            box-shadow: var(--shadow-xl);
+            animation: fadeInUp 0.5s var(--ease-standard);
+        }
+
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--space-20);
+        }
+
+        .success-icon svg {
+            width: 40px;
+            height: 40px;
+            fill: white;
+        }
+
+        .success-content h2 {
+            color: var(--color-text);
+            font-size: var(--font-size-3xl);
+            margin-bottom: var(--space-12);
+        }
+
+        .success-content p {
+            color: var(--color-text-secondary);
+            font-size: var(--font-size-base);
+            margin-bottom: var(--space-24);
+        }
+
+        @media (max-width: 768px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .card-header h1 {
+                font-size: var(--font-size-3xl);
+            }
+
+            .card-header,
+            .card-body {
+                padding: var(--space-24);
+            }
+
+            .payment-options {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
 </head>
-
 <body>
-    <!-- header-code -->
-    <header>
-         <a href="#home" class="logo">Lodha<span> Fitness</span></a>
-        <div class="show" id="menu">
-            <div class="fa fa-bars" aria-hidden="true" id="menu-icon" onclick="show()"></div>
-        </div>
-        <div class="hide" id="cancel">
-            <i class="fa fa-times " aria-hidden="true" onclick="hide() " id="cross"></i>
-        </div>
-        <div class="hide" id="opt">
-            <ul class="navbar" id="toggle">
-                <li><a href="/index.html#home ">Home</a></li>
-                <li><a href="/index.html#services">Services</a></li>
-                <li><a href="/index.html#about">About</a></li>
-                <li><a href="/index.html#review">Review</a></li>
-                <li><a href="/index.html#img-contact">Contact</a></li>
-
-            </ul>
-        </div>
-        <div class="top-btn">
-            <a href="Join.html" class="nav-btn">Join Us</a>
-        </div>
-    </header>
-    <!-- ++++++++++++++++++++++Join us Page+++++++++++++++++ -->
-
-    <section id="form">
-
-        <div class="registration-form-wrapper">
-            <div class="form-left">
-                <img src="Registration-pic/pic4.png" alt="">
-                <h1 class="head">Let’s Build Something Together <p>Fill out the form and we’ll get back to you as soon as possible.</p></h1><br/>
-                 
-            </div>
-            <div class="form-right">
-                <h1 class="reg">Registration Form</h1>
-                <div class="input-box">
-                    <input type="text" placeholder="First-Name" required>
-                    <input type="text" placeholder="Last-Name" required>
-                    <input type="email" placeholder="Email" required>
-                    <div class="input-zipPhn">
-                        <input type="number" placeholder="Phone" required/>
-                        <input type="text" placeholder="District" />
-                    </div>
-                    <div class="input-FeesCountry">
-                        <input type="text" placeholder="State " />
-                        <input type="number" readonly placeholder="Fees charge(1200)">
-                    </div>
-                    <textarea placeholder="Type your Message"></textarea>
-                    <button>Register now</button>
+    <div class="container">
+        <div class="registration-card">
+            <div class="card-header">
+                <div class="header-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+                    </svg>
                 </div>
+                <h1>Registration Form</h1>
+                <p>Complete your registration to join us</p>
+                <div class="fee-badge">Registration Fee: ₹1200</div>
+            </div>
+
+            <div class="card-body">
+                <form id="registrationForm">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label class="form-label">Full Name <span class="required">*</span></label>
+                            <input type="text" class="form-control" id="fullName" placeholder="Enter your full name" required>
+                            <div class="error-message" id="fullNameError">Please enter your full name</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Email Address <span class="required">*</span></label>
+                            <input type="email" class="form-control" id="email" placeholder="your.email@example.com" required>
+                            <div class="error-message" id="emailError">Please enter a valid email</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Mobile Number <span class="required">*</span></label>
+                            <input type="tel" class="form-control" id="mobile" placeholder="10-digit mobile number" pattern="[0-9]{10}" required>
+                            <div class="error-message" id="mobileError">Please enter valid 10-digit mobile number</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Date of Birth <span class="required">*</span></label>
+                            <input type="date" class="form-control" id="dob" required>
+                            <div class="error-message" id="dobError">Please select your date of birth</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Gender <span class="required">*</span></label>
+                            <select class="form-control" id="gender" required>
+                                <option value="">Select Gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <div class="error-message" id="genderError">Please select your gender</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Duration <span class="required">*</span></label>
+                            <select class="form-control" id="course" required>
+                                <option value="">Select Duration</option>
+                                <option value="1-month">1 Month</option>
+                                <option value="3-months">3 Months</option>
+                                <option value="6-months">6 Months</option>
+                                <option value="1-year-plus">Above 1 Year</option>
+                                <option value="as-per-choice">As per Choice</option>
+                            </select>
+                            <div class="error-message" id="courseError">Please select duration</div>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label class="form-label">Address <span class="required">*</span></label>
+                            <textarea class="form-control" id="address" placeholder="Enter your complete address" required></textarea>
+                            <div class="error-message" id="addressError">Please enter your address</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">City <span class="required">*</span></label>
+                            <input type="text" class="form-control" id="city" placeholder="Enter your city" required>
+                            <div class="error-message" id="cityError">Please enter your city</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">State <span class="required">*</span></label>
+                            <select class="form-control" id="state" required>
+                                <option value="">Select State</option>
+                                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                <option value="Delhi">Delhi</option>
+                                <option value="Gujarat">Gujarat</option>
+                                <option value="Karnataka">Karnataka</option>
+                                <option value="Maharashtra">Maharashtra</option>
+                                <option value="Punjab">Punjab</option>
+                                <option value="Tamil Nadu">Tamil Nadu</option>
+                                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                <option value="West Bengal">West Bengal</option>
+                            </select>
+                            <div class="error-message" id="stateError">Please select your state</div>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <div class="payment-methods">
+                                <h3>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/>
+                                    </svg>
+                                    Secure Payment Options Available
+                                </h3>
+                                <div class="payment-options">
+                                    <div class="payment-option">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                            <path d="M20 8H4V6h16m0 12H4v-6h16m0-8H4c-1.11 0-2 .89-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2z"/>
+                                        </svg>
+                                        <span>Credit Card</span>
+                                    </div>
+                                    <div class="payment-option">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                            <path d="M20 8H4V6h16m0 12H4v-6h16m0-8H4c-1.11 0-2 .89-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2z"/>
+                                        </svg>
+                                        <span>Debit Card</span>
+                                    </div>
+                                    <div class="payment-option">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                            <path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/>
+                                        </svg>
+                                        <span>UPI</span>
+                                    </div>
+                                    <div class="payment-option">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                            <path d="M5 6h14v2H5zm0 4h14v2H5zm0 4h14v2H5z"/>
+                                        </svg>
+                                        <span>Net Banking</span>
+                                    </div>
+                                    <div class="payment-option">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                            <path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/>
+                                        </svg>
+                                        <span>Wallets</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="terms" required>
+                                <label for="terms">I agree to pay the registration fee of ₹1200 and accept the terms &amp; conditions <span class="required">*</span></label>
+                            </div>
+                            <div class="error-message" id="termsError">Please accept terms and conditions</div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-submit" id="submitBtn">Proceed to Payment - ₹1200</button>
+                </form>
             </div>
         </div>
+    </div>
 
-       
-        <script src="script.js"></script>
-    </section>
+    <div class="success-modal" id="successModal">
+        <div class="success-content">
+            <div class="success-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+                </svg>
+            </div>
+            <h2>Payment Successful!</h2>
+            <p>Your registration has been completed successfully. Registration details have been sent to your email.</p>
+            <button class="btn-submit" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <script>
+        // Initialize EmailJS with your Public Key
+        (function() {
+            emailjs.init("TqKLVvWnmgxIHvb2I"); // EmailJS Public Key
+        })();
+
+        const form = document.getElementById('registrationForm');
+        const successModal = document.getElementById('successModal');
+
+        // Form validation
+        function validateField(field) {
+            const errorElement = document.getElementById(field.id + 'Error');
+            
+            if (!field.validity.valid || field.value.trim() === '') {
+                errorElement.classList.add('show');
+                field.style.borderColor = 'var(--color-error)';
+                return false;
+            } else {
+                errorElement.classList.remove('show');
+                field.style.borderColor = 'var(--color-border)';
+                return true;
+            }
+        }
+
+        // Real-time validation
+        form.querySelectorAll('input, select, textarea').forEach(field => {
+            field.addEventListener('blur', () => validateField(field));
+            field.addEventListener('input', () => {
+                if (field.value.trim() !== '') {
+                    validateField(field);
+                }
+            });
+        });
+
+        // Set max date for DOB (must be at least 10 years old)
+        const dobInput = document.getElementById('dob');
+        const today = new Date();
+        const maxDate = new Date(today.getFullYear() - 10, today.getMonth(), today.getDate());
+        dobInput.max = maxDate.toISOString().split('T')[0];
+
+        // Prevent double submission
+        let isSubmitting = false;
+
+        // Form submission with Razorpay Payment
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            if (isSubmitting) {
+                return false;
+            }
+            
+            let isValid = true;
+            const fields = form.querySelectorAll('input, select, textarea');
+            
+            fields.forEach(field => {
+                if (!validateField(field)) {
+                    isValid = false;
+                }
+            });
+
+            // Check terms checkbox
+            const termsCheckbox = document.getElementById('terms');
+            const termsError = document.getElementById('termsError');
+            
+            if (!termsCheckbox.checked) {
+                termsError.classList.add('show');
+                isValid = false;
+            } else {
+                termsError.classList.remove('show');
+            }
+
+            if (isValid) {
+                isSubmitting = true;
+                const submitBtn = document.getElementById('submitBtn');
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Processing...';
+                
+                // Get form data
+                const formData = {
+                    fullName: document.getElementById('fullName').value,
+                    email: document.getElementById('email').value,
+                    mobile: document.getElementById('mobile').value,
+                    dob: document.getElementById('dob').value,
+                    gender: document.getElementById('gender').value,
+                    course: document.getElementById('course').value,
+                    address: document.getElementById('address').value,
+                    city: document.getElementById('city').value,
+                    state: document.getElementById('state').value,
+                    fee: 1200
+                };
+
+                // Initialize Razorpay Payment
+                const options = {
+                    key: 'rzp_test_1DP5mmOlF5G5ag', // Replace with YOUR Razorpay Key
+                    amount: 120000, // Amount in paise (₹1200 * 100)
+                    currency: 'INR',
+                    name: 'Course Registration',
+                    description: 'Registration Fee Payment',
+                    image: 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png',
+                    method: {
+                        netbanking: true,
+                        card: true,
+                        upi: true,
+                        wallet: true
+                    },
+                    handler: function(response) {
+                        // Payment successful
+                        console.log('Payment ID:', response.razorpay_payment_id);
+                        
+                        // Send email using EmailJS
+                        const templateParams = {
+                            to_email: 'divineguru63@gmail.com',
+                            from_name: formData.fullName,
+                            user_email: formData.email,
+                            user_mobile: formData.mobile,
+                            user_dob: formData.dob,
+                            user_gender: formData.gender,
+                            user_duration: formData.course,
+                            user_address: formData.address,
+                            user_city: formData.city,
+                            user_state: formData.state,
+                            payment_id: response.razorpay_payment_id,
+                            registration_fee: '₹1,200',
+                            registration_date: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })
+                        };
+
+                        // Send email with payment confirmation
+                        emailjs.send('service_azm5lup', 'template_lkx3m4d', templateParams)
+                            .then(function(emailResponse) {
+                                console.log('Email sent successfully!', emailResponse.status, emailResponse.text);
+                                
+                                // Show success modal
+                                successModal.classList.add('show');
+                            }, function(error) {
+                                console.error('Email sending failed...', error);
+                                // Still show success since payment was successful
+                                successModal.classList.add('show');
+                            });
+                    },
+                    prefill: {
+                        name: formData.fullName,
+                        email: formData.email,
+                        contact: formData.mobile
+                    },
+                    notes: {
+                        address: formData.address,
+                        city: formData.city,
+                        state: formData.state
+                    },
+                    theme: {
+                        color: '#21808D'
+                    },
+                    modal: {
+                        ondismiss: function() {
+                            isSubmitting = false;
+                            submitBtn.disabled = false;
+                            submitBtn.textContent = 'Proceed to Payment - ₹1200';
+                            alert('Payment cancelled. Please try again.');
+                        }
+                    }
+                };
+
+                try {
+                    const razorpay = new Razorpay(options);
+                    razorpay.open();
+                } catch (error) {
+                    console.error('Razorpay Error:', error);
+                    alert('Payment gateway error. Please refresh and try again.');
+                    isSubmitting = false;
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Proceed to Payment - ₹1200';
+                }
+            } else {
+                // Scroll to first error
+                const firstError = form.querySelector('.error-message.show');
+                if (firstError) {
+                    firstError.parentElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            }
+        });
+
+        function closeModal() {
+            successModal.classList.remove('show');
+            form.reset();
+            window.location.reload();
+        }
+    </script>
 </body>
-
 </html>
